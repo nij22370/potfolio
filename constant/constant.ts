@@ -3,37 +3,37 @@ import { url } from "inspector";
 export const NavLinks = [
   {
     id: 1,
-    url: "/#",
+    url: "/#home",
     Label: "Home",
   },
   {
     id: 2,
-    url: "/#",
+    url: "/#services",
     Label: "Services",
   },
   {
     id: 3,
-    url: "/#",
+    url: "/#projects",
     Label: "Projects",
   },
   {
     id: 4,
-    url: "/#",
-    Label: "Works",
+    url: "/#resume",
+    Label: "Experience",
   },
   {
     id: 5,
-    url: "/#",
-    Label: "skills  ",
+    url: "/#skills",
+    Label: "Skills",
   },
   {
     id: 6,
-    url: "/#",
-    Label: "Testimonials",
+    url: "/#testimonials",
+    Label: "Reviews",
   },
   {
     id: 7,
-    url: "/#",
+    url: "/#contact",
     Label: "Contact",
   },
 ];

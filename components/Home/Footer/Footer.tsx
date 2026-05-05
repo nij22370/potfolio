@@ -2,20 +2,18 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div
-      style={{
-        backgroundColor: "#0B1230", // dark navy like screenshot
-        padding: "20px 0",
-        textAlign: "center",
-        color: "#D3D6E8", // soft light gray text
-        fontSize: "18px",
-        letterSpacing: "0.5px",
-        width: "100%",
-        marginTop: "40px",
-      }}
+    <footer
+      className="py-10 text-center text-gray-400 bg-[#050709] border-t border-white/5 relative z-10"
     >
-      Sandesh – Personal Portfolio Website
-    </div>
+      <div className="max-w-7xl mx-auto px-6">
+        <p className="text-lg font-medium">
+          &copy; {new Date().getFullYear()} <span className="text-white">Sandesh Dhakal</span>. All rights reserved.
+        </p>
+        <p className="text-sm mt-2 text-gray-500">
+          Built with Next.js, React & Tailwind CSS
+        </p>
+      </div>
+    </footer>
   );
 };
 

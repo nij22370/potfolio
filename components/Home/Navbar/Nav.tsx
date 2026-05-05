@@ -29,8 +29,8 @@ const Nav = ({ openNav }: Props) => {
 
   return (
     <div
-      className={`transition-all duration-200 h-[12vh] fixed w-full z-10000 ${
-        navBg ? "bg-[#0f142ed9] shadow-md" : "fixed"
+      className={`transition-all duration-300 h-[12vh] fixed w-full z-[1000] ${
+        navBg ? "bg-[#0b0b1ad9] backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="flex items-center h-full justify-between w-[90%] mx-auto">
@@ -60,7 +60,7 @@ const Nav = ({ openNav }: Props) => {
         {/* BUTTONS */}
         <div className="flex items-center space-x-4">
           <a
-            href="/Sandesh_Dhakal_CV.pdf"
+            href="/Sandesh_Dhakal_CV_ATS.pdf"
             download
             className="px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-blue-700 hover:bg-blue-800 text-white transition flex items-center space-x-2"
           >

@@ -25,13 +25,15 @@ const ClientReviewCard = ({ image, name, role }: Props) => {
         </div>
       </div>
 
-      <p className="mt-6 text-base text-gray-300 font-medium leading-relaxed">
-        &quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae
-        minima labore debitis consequatur et laudantium quia blanditiis rerum
-        dignissimos soluta atque accusamus voluptatum.&quot;
+      <p className="mt-6 text-gray-400 italic leading-relaxed">
+        &quot;Sandesh is an exceptional developer who consistently delivers high-quality work. His attention to detail and mastery of Next.js made our project a huge success.&quot;
       </p>
-      <h1 className="mt-6 text-xl font-bold text-cyan-200">{role}</h1>
-      <p className="mt-1 text-white">{role}</p>
+      
+      <div className="flex items-center gap-1 mt-6">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <span key={star} className="text-yellow-500 text-sm">★</span>
+        ))}
+      </div>
     </div>
   );
 };
