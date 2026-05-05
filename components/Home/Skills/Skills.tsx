@@ -3,25 +3,22 @@ import React from "react";
 import {
   SiJavascript,
   SiNextdotjs,
-  SiNumpy,
-  SiPandas,
-  SiPython,
   SiReact,
   SiTailwindcss,
   SiTypescript,
+  SiRedux,
+  SiMongodb,
+  SiPostman,
+  SiGithub,
+  SiFigma,
 } from "react-icons/si";
 import Tilt from "react-parallax-tilt";
 
 const skills = [
   {
-    name: "JavaScript",
-    icon: <SiJavascript className="text-yellow-400" />,
-    percentage: 88,
-  },
-  {
     name: "React.js",
     icon: <SiReact className="text-cyan-400" />,
-    percentage: 85,
+    percentage: 84,
   },
   {
     name: "Next.js",
@@ -29,35 +26,40 @@ const skills = [
     percentage: 82,
   },
   {
-    name: "Tailwind CSS",
-    icon: <SiTailwindcss className="text-cyan-300" />,
-    percentage: 95,
-  },
-  {
     name: "TypeScript",
     icon: <SiTypescript className="text-blue-500" />,
     percentage: 80,
   },
   {
-    name: "Python",
-    icon: <SiPython className="text-blue-400" />,
-    percentage: 85,
-  },
-  {
-    name: "Pandas",
-    icon: <SiPandas className="text-purple-400" />,
+    name: "Redux",
+    icon: <SiRedux className="text-purple-500" />,
     percentage: 78,
   },
   {
-    name: "NumPy",
-    icon: <SiNumpy className="text-orange-500" />,
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss className="text-cyan-300" />,
+    percentage: 84,
+  },
+  {
+    name: "MongoDB",
+    icon: <SiMongodb className="text-green-500" />,
     percentage: 75,
+  },
+  {
+    name: "Postman",
+    icon: <SiPostman className="text-orange-500" />,
+    percentage: 80,
+  },
+  {
+    name: "GitHub",
+    icon: <SiGithub className="text-white" />,
+    percentage: 84,
   },
 ];
 
 const Skills = () => {
   return (
-    <section className="py-20 bg-[#0a0a1f]">
+    <section id="skills" className="py-20 bg-[#0a0a1f]">
       <div className="max-w-7xl mx-auto px-6">
         <h1 className="text-center text-5xl md:text-6xl font-bold text-white mb-16">
           my <span className="text-cyan-400">Skills</span>

@@ -3,12 +3,12 @@ import BlogCard from "./BlogCard";
 
 const Blog = () => {
   return (
-    <div className="pt-16 pb-16 space-y-8">
-      <h1 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white">
-        My latest
-        <span className="text-cyan-200"> Blogs</span>
-      </h1>
-      <div className="w-[75%] mx-auto grid grid-cols-1 xl:grid-cols-3 xl:gap-4 gap-10 items-start">
+    <div id="blog" className="py-20">
+      <div className="max-w-7xl mx-auto px-6">
+        <h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-16">
+          My Latest <span className="text-cyan-400">Blogs</span>
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
         <div
           data-aos="fade-right"
           data-aos-anchor-placement="top-center"
@@ -40,6 +40,7 @@ const Blog = () => {
             image="/images/b3.jpg"
             title="Learn how to build an amazing Social Media website using next js"
           />
+        </div>
         </div>
       </div>
     </div>

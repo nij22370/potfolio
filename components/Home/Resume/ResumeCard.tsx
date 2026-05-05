@@ -3,28 +3,28 @@ import { IconType } from "react-icons/lib";
 type Props = {
   role: string;
   Icon: IconType;
-  date?: string; //optional prop means can be passed or not
+  date?: string;
+  description?: string;
 };
 
-const ResumeCard = ({ role, Icon, date }: Props) => {
+const ResumeCard = ({ role, Icon, date, description }: Props) => {
   return (
-    <div className="mb-16">
-      <div className="flex items-start space-x-6 bg-blue-950/20 transition-all duration-300 p-4 sm:p-8 rounded-md gap-4">
-        <div className="sm:w-14 sm:h-14 w-10 h-10 bg-blue-950 rounded-full flex items-center justify-center flex-col">
-          <Icon className="sm:w-8 sm:h-8 w-6 h-6 text-white" />
+    <div className="mb-10">
+      <div className="flex items-start space-x-6 bg-white/5 backdrop-blur-sm border border-white/5 hover:border-cyan-500/30 transition-all duration-300 p-6 rounded-2xl group">
+        <div className="w-14 h-14 bg-blue-900/30 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-500/20 transition-colors">
+          <Icon className="w-8 h-8 text-cyan-400" />
         </div>
         <div className="flex-1">
           {date && (
-            <h1 className="mb-2 sm:px-6 sm:py-1.5 px-4 py-1 rounded-full bg-gray-200 text-gray-600 w-fit sm:text-lg text-sm font-bold">
+            <span className="inline-block mb-3 px-3 py-1 rounded-lg bg-cyan-500/10 text-cyan-400 text-xs font-bold tracking-wider uppercase">
               {date}
-            </h1>
+            </span>
           )}
-          <h1 className="text-gray-200 text-xl sm:text-2xl font-semibold">
+          <h1 className="text-white text-xl font-bold group-hover:text-cyan-300 transition-colors">
             {role}
           </h1>
-          <p className="text-gray-300 text-sm sm:text-base pt-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eum
-            laudantium sapiente cumque distinctio.
+          <p className="text-gray-400 text-sm leading-relaxed mt-3">
+            {description || "Collaborated on high-impact web applications using modern frontend technologies."}
           </p>
         </div>
       </div>

@@ -1,13 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js, React, and TypeScript. This portfolio showcases my work, skills, and experience in an interactive and visually appealing way.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
+- **Responsive Design**: Works on all device sizes
+- **Modern UI/UX**: Clean and professional interface with smooth animations
+- **Interactive Elements**:
+  - Animated hero section with particle effects
+  - Smooth scrolling navigation
+  - Project showcase with image galleries
+  - Skills visualization
+  - Client testimonials
+  - Contact form
+- **Performance Optimized**: Fast loading times and smooth animations
+- **SEO Friendly**: Built with best practices for search engine optimization
+
+## 🛠️ Technologies Used
+
+- **Frontend**:
+  - Next.js 14 (React 19)
+  - TypeScript
+  - Tailwind CSS
+  - AOS (Animate On Scroll)
+  - React Icons
+  - React Parallax Tilt
+  - Typewriter Effect
+  - Particle Effects
+
+## 📦 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
+   cd portfolio
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
 # or
 pnpm dev
 # or

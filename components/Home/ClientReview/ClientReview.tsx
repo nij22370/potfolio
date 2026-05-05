@@ -25,44 +25,50 @@ const responsive = {
 
 const ClientReview = () => {
   return (
-    <div className="pt-16 pb-16">
-      <h1 className="text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white">
-        Kind words from satisfied <br />
-        <span className="text-cyan-200">clients</span>
-      </h1>
-      <div className="mt-16 w-[70%] mx-auto">
-        <Carousel
-          showDots={true}
-          responsive={responsive}
-          //   ssr={true} // means to render carousel on server-side.
-          infinite={true}
-          autoPlay={true}
-          autoPlaySpeed={1000}
-          keyBoardControl={true}
-        >
-          <ClientReviewCard
-            image="/images/c1.png"
-            name="Rohan Kamracharya"
-            role="Full Stack Developer"
-          />
-          <ClientReviewCard
-            image="/images/c2.png"
-            name="Kalilash Badu"
-            role="UI/UX Designer"
-          />
-          <ClientReviewCard
-            image="/images/c3.png"
-            name="Sohan Mijar"
-            role="web Developer"
-          />
-          <ClientReviewCard image="/images/c4.png" name="John Doe" role="CEO" />
-          <ClientReviewCard
-            image="/images/c5.png"
-            name="Nav Basnet"
-            role="CEO , Aparell"
-          />
-        </Carousel>
-        ;
+    <div id="testimonials" className="py-20 bg-[#050709]">
+      <div className="max-w-7xl mx-auto px-6">
+        <h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-16">
+          Kind words from satisfied <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">clients</span>
+        </h1>
+        <div className="relative">
+          <Carousel
+            showDots={true}
+            responsive={responsive}
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={4000}
+            keyBoardControl={true}
+            itemClass="px-10 pb-10"
+            dotListClass="custom-dot-list-style"
+          >
+            <ClientReviewCard
+              image="/images/c1.png"
+              name="Rohan Kamracharya"
+              role="Full Stack Developer"
+            />
+            <ClientReviewCard
+              image="/images/c2.png"
+              name="Kalilash Badu"
+              role="UI/UX Designer"
+            />
+            <ClientReviewCard
+              image="/images/c3.png"
+              name="Sohan Mijar"
+              role="Web Developer"
+            />
+            <ClientReviewCard
+              image="/images/c4.png"
+              name="John Doe"
+              role="CEO"
+            />
+            <ClientReviewCard
+              image="/images/c5.png"
+              name="Nav Basnet"
+              role="CEO, Aparell"
+            />
+          </Carousel>
+        </div>
       </div>
     </div>
   );
