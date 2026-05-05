@@ -32,7 +32,7 @@ A modern, responsive portfolio website built with Next.js, React, and TypeScript
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/nij22370/potfolio.git
    cd portfolio
    ```
 
