@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 
-type Props = {
+interface ClientReviewCardProps {
   name: string;
   image: string;
   role: string;
   review: string;
-};
+}
 
-const ClientReviewCard = ({ image, name, role, review }: Props) => {
+const ClientReviewCard = ({ image, name, role, review }: ClientReviewCardProps) => {
   return (
     <div className="m-2 bg-[#0b1622] p-6 rounded-xl shadow-lg">
       <div className="flex items-center gap-4">
