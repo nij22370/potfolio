@@ -26,7 +26,16 @@ const Home = () => {
       anchorPlacement: "top-bottom",
       offset: 20,
       delay: 100,
-      disable: isMobile,
+      disable: isMobile, // Disable on mobile if needed
+      ...(isMobile && {
+        mobile: {
+          disable: false,
+          duration: 800,
+          easing: 'ease-out',
+          once: true
+        }
+      }),
+      ...(process.env.NODE_ENV === 'development' && { debug: true })
     });
 
     const timer = setTimeout(() => {

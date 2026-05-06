@@ -25,10 +25,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <div 
-      className={`relative p-8 rounded-2xl bg-[#1a1a2e]/80 group
+      className={`relative p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e] to-[#16213e] 
         border border-gray-800 overflow-hidden transition-all duration-500 h-full 
         hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] hover:-translate-y-2 hover:border-indigo-500/50
-        hover:bg-[#1a1a2e]/90`}
+        ${isHovered ? 'bg-opacity-90' : 'bg-opacity-80'}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       role="article"
