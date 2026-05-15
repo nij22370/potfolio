@@ -27,7 +27,7 @@ const ClientReviewCard = ({ image, name, role, review }: ClientReviewCardProps) 
       </div>
 
       <p className="mt-6 text-gray-400 italic leading-relaxed">
-        &quot;Sandesh is an exceptional developer who consistently delivers high-quality work. His attention to detail and mastery of Next.js made our project a huge success.&quot;
+        &quot;{review}&quot;
       </p>
       
       <div className="flex items-center gap-1 mt-6">

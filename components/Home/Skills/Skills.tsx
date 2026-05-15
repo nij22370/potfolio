@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import {
-  SiJavascript,
   SiNextdotjs,
   SiReact,
   SiTailwindcss,
@@ -10,7 +9,6 @@ import {
   SiMongodb,
   SiPostman,
   SiGithub,
-  SiFigma,
 } from "react-icons/si";
 import Tilt from "react-parallax-tilt";
 
