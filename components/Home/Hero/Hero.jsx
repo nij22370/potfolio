@@ -78,7 +78,7 @@ const Hero = () => {
           data-aos-once="true"
           className="mt-8 text-sm px-2 text-center sm:text-2xl font-medium flex flex-wrap justify-center gap-2 items-center"
         >
-          <span>Hi! I'm Sandesh — A specialized</span>
+          <span>Hi! I&apos;m Sandesh — A specialized</span>
           <span className="text-cyan-400 font-bold border-b-2 border-cyan-400/30">
             <Typewriter
               options={{
