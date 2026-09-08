@@ -6,6 +6,7 @@ import Footer from "@/components/Home/Footer/Footer";
 import ScrollToTop from "@/components/Helper/ScrollToTop";
 import ScrollProgress from "@/components/Helper/ScrollProgress";
 import { ThemeProvider } from "@/components/Helper/ThemeProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const font = Outfit({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
           <Footer />
           <ScrollToTop />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

@@ -9,6 +9,7 @@ const Footer = () => {
         <p className="text-[16px] font-medium">
           &copy; {new Date().getFullYear()} <span className="text-[var(--color-text-primary)]">Sandesh Dhakal</span>. Built with Next.js, React & Tailwind CSS.
         </p>
+        {/* FlyRank Graduate Badge — to be added after track completion */}
       </div>
     </footer>
   );
