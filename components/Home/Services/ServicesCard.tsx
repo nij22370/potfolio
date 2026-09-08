@@ -25,9 +25,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <div 
-      className={`relative p-8 rounded-2xl bg-gradient-to-br from-[#1a1a2e] to-[#16213e] 
-        border border-gray-800 overflow-hidden transition-all duration-500 h-full 
-        hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] hover:-translate-y-2 hover:border-indigo-500/50
+      className={`relative p-8 rounded-[var(--radius-2xl)] bg-[var(--color-surface)] 
+        border border-[#3E7BFA]/20 overflow-hidden transition-all duration-500 h-full 
+        hover:shadow-[0_0_30px_rgba(62,123,250,0.2)] hover:-translate-y-2 hover:border-[#3E7BFA]/50
         ${isHovered ? 'bg-opacity-90' : 'bg-opacity-80'}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -35,19 +35,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       aria-label={`Service: ${name}`}
     >
       {/* Animated background */}
-      <div 
-        className={`absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 
+      <div
+        className={`absolute inset-0 bg-gradient-to-br from-[#3E7BFA]/10 to-[#3E7BFA]/20
           transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
         aria-hidden="true"
       />
       
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col">
-        <div 
-          className={`w-16 h-16 flex items-center justify-center rounded-xl mb-6 transition-all duration-500 ${
-            isHovered 
-              ? 'bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/30'
-              : 'bg-gray-800/50 border border-gray-700/50'
+        <div
+          className={`w-16 h-16 flex items-center justify-center rounded-[var(--radius-xl)] mb-[var(--spacing-md)] transition-all duration-500 ${
+            isHovered
+              ? 'bg-gradient-to-r from-[#3E7BFA] to-[#6095FF] shadow-lg shadow-[#3E7BFA]/30'
+              : 'bg-[var(--color-surface-hover)] border border-[#3E7BFA]/20'
           }`}
         >
           <Image 
@@ -62,18 +62,18 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           />
         </div>
         
-        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-white 
+        <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-4 group-hover:text-[#3E7BFA] 
           transition-colors duration-300">
           {name}
         </h3>
         
-        <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
+        <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-6 flex-grow">
           {description}
         </p>
         
         {/* Animated read more link */}
         <div 
-          className="mt-auto flex items-center text-indigo-400 group-hover:text-indigo-300 
+          className="mt-auto flex items-center text-[#3E7BFA] group-hover:text-[#6095FF] 
             transition-colors duration-300"
           aria-hidden="true"
         >

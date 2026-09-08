@@ -2,11 +2,12 @@
 import React, { useEffect, useState } from "react";
 import Hero from "./Hero/Hero";
 import Services from "./Services/Services";
-import Resume from "./Resume/Resume";
+import FeaturedWork from "./FeaturedWork/FeaturedWork";
+import Stats from "./Stats/Stats";
+import Workflow from "./Workflow/Workflow";
 import Projects from "./Projects/Projects";
 import Skills from "./Skills/Skills";
-import ClientReview from "./ClientReview/ClientReview";
-import Blog from "./Blog/Blog";
+import OffTheClock from "./OffTheClock/OffTheClock";
 import Contact from "./Contact/Contact";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -24,7 +25,7 @@ const Home = () => {
       anchorPlacement: "top-bottom",
       offset: 20,
       delay: 100,
-      disable: isMobile, // Disable on mobile if needed
+      disable: isMobile,
       ...(isMobile && {
         mobile: {
           disable: false,
@@ -41,7 +42,6 @@ const Home = () => {
       setAosLoaded(true);
     }, 100);
 
-    // Handle window resize
     const handleResize = () => {
       AOS.refresh();
     };
@@ -51,7 +51,7 @@ const Home = () => {
     return () => {
       clearTimeout(timer);
       window.removeEventListener('resize', handleResize);
-      AOS.refreshHard(); // Reset AOS on unmount
+      AOS.refreshHard();
     };
   }, []);
 
@@ -59,11 +59,12 @@ const Home = () => {
     <div className={`h-auto transition-opacity duration-500 ${aosLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <Hero />
       <Services />
-      <Resume />
+      <FeaturedWork />
+      <Stats />
+      <Workflow />
       <Projects />
       <Skills />
-      <ClientReview />
-      <Blog />
+      <OffTheClock />
       <Contact />
     </div>
   );

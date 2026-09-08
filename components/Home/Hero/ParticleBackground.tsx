@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import {
   type Container,
@@ -48,12 +49,12 @@ export default function ParticlesHero() {
         },
       },
       particles: {
-        color: { value: "#ffffff" },
+        color: { value: "#3E7BFA" },
         links: {
-          color: "#ffffff",
+          color: "#3E7BFA",
           distance: 150,
           enable: true,
-          opacity: 0.4,
+          opacity: 0.5,
           width: 1,
         },
         move: {
@@ -66,7 +67,7 @@ export default function ParticlesHero() {
           density: { enable: true, area: 800 },
           value: 60,
         },
-        opacity: { value: 0.5 },
+        opacity: { value: 0.6 },
         shape: { type: "circle" },
         size: { value: { min: 1, max: 4 } },
       },
@@ -78,11 +79,32 @@ export default function ParticlesHero() {
   if (!init) return null;
 
   return (
-    <Particles
-      id="tsparticles"
-      particlesLoaded={particlesLoaded}
-      options={options}
-      className="absolute inset-0 "
-    />
+    <div className="absolute inset-0 top-[var(--spacing-nav-height)]">
+      <Particles
+        id="tsparticles"
+        particlesLoaded={particlesLoaded}
+        options={options}
+      />
+      {/* Decorative floating dots */}
+      {[0, 1, 2].map((i) => (
+        <motion.div
+          key={i}
+          className="absolute w-2 h-2 rounded-full bg-[#3E7BFA]/20"
+          style={{
+            top: `${20 + i * 30}%`,
+            left: `${10 + i * 15}%`,
+          }}
+          animate={{
+            y: [0, -10, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: i * 0.5,
+          }}
+        />
+      ))}
+    </div>
   );
 }

@@ -10,7 +10,7 @@ interface ClientReviewCardProps {
 
 const ClientReviewCard = ({ image, name, role, review }: ClientReviewCardProps) => {
   return (
-    <div className="m-2 bg-[#0b1622] p-6 rounded-xl shadow-lg">
+    <div className="m-2 bg-[var(--color-surface)] p-6 rounded-xl shadow-lg">
       <div className="flex items-center gap-4">
         <Image
           src={image}
@@ -21,12 +21,12 @@ const ClientReviewCard = ({ image, name, role, review }: ClientReviewCardProps) 
         />
 
         <div>
-          <h3 className="text-lg text-white font-semibold">{name}</h3>
-          <p className="text-sm text-gray-400">{role}</p>
+          <h3 className="text-lg text-[var(--text-heading)] font-semibold">{name}</h3>
+          <p className="text-sm text-[var(--text-muted)]">{role}</p>
         </div>
       </div>
 
-      <p className="mt-6 text-gray-400 italic leading-relaxed">
+      <p className="mt-6 text-[var(--text-body)] italic leading-relaxed">
         &quot;{review}&quot;
       </p>
       

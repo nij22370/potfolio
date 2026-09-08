@@ -20,10 +20,10 @@ const ResumeCard = ({ role, Icon, date, description }: Props) => {
               {date}
             </span>
           )}
-          <h1 className="text-white text-xl font-bold group-hover:text-cyan-300 transition-colors">
+          <h1 className="text-[var(--color-text-primary)] text-xl font-bold group-hover:text-[#3E7BFA] transition-colors">
             {role}
           </h1>
-          <p className="text-gray-400 text-sm leading-relaxed mt-3">
+          <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mt-3">
             {description || "Collaborated on high-impact web applications using modern frontend technologies."}
           </p>
         </div>
