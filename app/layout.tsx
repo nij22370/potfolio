@@ -14,8 +14,14 @@ const font = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Sandesh Portfolio",
-  description: "Modern and Minimalist Portfolio Website",
+  title: "Sandesh Dhakal — Frontend Developer",
+  description:
+    "Sandesh Dhakal — Frontend Developer based in Lalitpur, Nepal. Building high-performance web applications with Next.js, React, and TypeScript.",
+  openGraph: {
+    title: "Sandesh Dhakal — Frontend Developer",
+    description:
+      "Frontend Developer based in Lalitpur, Nepal. Building with Next.js, React, and TypeScript.",
+  },
 };
 
 export default function RootLayout({
