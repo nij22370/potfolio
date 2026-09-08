@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, FormEvent } from 'react'
-import { motion } from "framer-motion"
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -102,15 +101,13 @@ export function ContactForm() {
         </p>
       )}
 
-      <motion.button
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.95 }}
+      <button
         type="submit"
         disabled={status === 'loading'}
         className="w-full py-[var(--spacing-md)] bg-[#3E7BFA] hover:bg-[#6095FF] text-[var(--color-text-on-accent)] font-medium rounded-[var(--radius-pill)] text-[var(--font-body-base)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'loading' ? 'Sending...' : 'Send Message'}
-      </motion.button>
+      </button>
     </form>
   )
 }
