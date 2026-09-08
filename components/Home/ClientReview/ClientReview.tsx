@@ -24,11 +24,11 @@ const responsive = {
 
 const ClientReview = () => {
   return (
-    <div id="testimonials" className="py-20 bg-[#050709]">
+    <div id="testimonials" className="py-20 bg-[var(--color-canvas)]">
       <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-16">
+        <h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-heading)] mb-16">
           Kind words from satisfied <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">clients</span>
+          <span className="text-[var(--text-accent)]">clients</span>
         </h1>
         <div className="relative">
           <Carousel

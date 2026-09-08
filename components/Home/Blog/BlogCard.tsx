@@ -16,21 +16,21 @@ const BlogCard = ({ image, title }: Props) => {
         height={500}
         className="object-cover"
       />
-      <p className="mt-6 text-base text-gray-500 font-medium sm:text-lg">
+      <p className="mt-6 text-base text-[var(--text-muted)] font-medium sm:text-lg">
         21 July 2025
       </p>
-      <h1 className="mt-5 text-lg font-bold text-white hover:underline hover:text-cyan-300 cursor-pointer transition-all duration-300">
+      <h1 className="mt-5 text-lg font-bold text-[var(--text-heading)] hover:underline hover:text-[var(--text-accent)] cursor-pointer transition-all duration-300">
         {title}
       </h1>
 
       <div className="flex items-center gap-4 mt-4">
-        <span className="px-5 py-2 bg-blue-700 text-white rounded-full text-sm font-semibold">
+        <span className="px-5 py-2 bg-[#3E7BFA] text-[var(--color-text-on-accent)] rounded-full text-sm font-semibold">
           React
         </span>
-        <span className="px-5 py-2 bg-blue-700 text-white rounded-full text-sm font-semibold">
+        <span className="px-5 py-2 bg-[#3E7BFA] text-[var(--color-text-on-accent)] rounded-full text-sm font-semibold">
           Next JS
         </span>
-        <span className="px-5 py-2 bg-blue-700 text-white rounded-full text-sm font-semibold">
+        <span className="px-5 py-2 bg-[#3E7BFA] text-[var(--color-text-on-accent)] rounded-full text-sm font-semibold">
           Tailwind
         </span>
       </div>

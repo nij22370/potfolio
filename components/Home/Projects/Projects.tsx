@@ -1,139 +1,170 @@
+"use client";
 import React from "react";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import { BsArrowUpRight, BsGithub, BsBoxArrowUpRight } from "react-icons/bs";
+import ProjectIllustration from "@/components/Helper/ProjectIllustration";
+
+interface Project {
+  id: number;
+  title: string;
+  shortDesc: string;
+  tags: string[];
+  github: string;
+  live?: string;
+  illustration: string;
+}
+
+const projects: Project[] = [
+  {
+    id: 1,
+    title: "Driver/Delivery Marketplace",
+    shortDesc: "Full-stack marketplace with GPS tracking and Stripe payouts",
+    tags: ["Next.js", "TypeScript", "MongoDB"],
+    github: "https://github.com/nij22370/delivery",
+    illustration: "architecture",
+  },
+  {
+    id: 2,
+    title: "Document/Barcode Scanner",
+    shortDesc: "Decodes barcodes and PDF417, compiles PDF reports",
+    tags: ["React", "FastAPI", "OpenCV"],
+    github: "https://github.com/nij22370/sccanner",
+    illustration: "barcode",
+  },
+  {
+    id: 3,
+    title: "SujhavMitra",
+    shortDesc: "Recommendation API with JWT auth and modular endpoints",
+    tags: ["Flask", "JWT", "MySQL"],
+    github: "https://github.com/nij22370",
+    illustration: "recommendation",
+  },
+  {
+    id: 4,
+    title: "Task Manager",
+    shortDesc: "React + Vite app with Supabase auth and file uploads",
+    tags: ["React", "Vite", "Supabase"],
+    github: "https://github.com/nij22370/taskmanager",
+    live: "https://taskmanager-gamma-orpin.vercel.app/",
+    illustration: "pipeline",
+  },
+  {
+    id: 5,
+    title: "This Portfolio",
+    shortDesc: "Modern portfolio with Framer Motion animations",
+    tags: ["Next.js", "React", "Framer Motion"],
+    github: "https://github.com/nij22370/potfolio",
+    illustration: "portfolio",
+  },
+];
+
 export default function Projects() {
   return (
-    <div id="projects" className="pt-16 pb-16 bg-[#050709]">
-      <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-16">
-          A small selection of recent <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">projects</span>
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-16">
-        {/*first project */}
-        <div
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-center"
-          data-aos-delay="0"
-          className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
+    <section id="projects" className="py-24 bg-[var(--color-canvas)]">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mb-14"
         >
-          <div className="relative overflow-hidden rounded-xl">
-            <Image
-              src="/images/image1.png"
-              alt="Motorcycle Inventory System"
-              width={1000}
-              height={800}
-              className="rounded-xl transform hover:scale-110 transition-transform duration-500"
-            />
-          </div>
-          <h1 className="mt-6 text-2xl font-bold text-white">
-            Motorcycle Inventory System
-          </h1>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {["Next.js 14", "TypeScript", "Redux Toolkit", "MongoDB"].map((tech) => (
-              <span key={tech} className="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-xs rounded-full border border-cyan-500/20">
-                {tech}
-              </span>
-            ))}
-          </div>
-          <p className="mt-4 text-gray-400 text-sm leading-relaxed">
-            Full-stack inventory platform with purchase order flows, real-time notifications, and JWT authentication.
+          <p className="text-sm font-medium text-[var(--text-accent)] tracking-widest uppercase mb-3">
+            Personal Projects
           </p>
-        </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-heading)] leading-tight">
+            Things I&apos;ve Built
+          </h2>
+          <p className="mt-3 text-[var(--text-body)] max-w-xl">
+            Unlike the case studies above, these were built on my own time and are
+            public — the links go straight to the repos.
+          </p>
+        </motion.div>
 
-        {/*Second project */}
-        <div
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-center"
-          data-aos-delay="100"
-          className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
-        >
-          <div className="relative overflow-hidden rounded-xl">
-            <Image
-              src="/images/image4.png"
-              alt="Barcode Scanner"
-              width={800}
-              height={650}
-              className="rounded-xl transform hover:scale-110 transition-transform duration-500"
-            />
-          </div>
-          <h1 className="mt-6 text-2xl font-bold text-white">
-            Multipurpose Document Scanner
-          </h1>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {["React.js", "FastAPI", "OpenCV", "Python"].map((tech) => (
-              <span key={tech} className="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs rounded-full border border-purple-500/20">
-                {tech}
-              </span>
-            ))}
-          </div>
-          <p className="mt-4 text-gray-400 text-sm leading-relaxed">
-            Decodes barcodes, PDF417 codes, and compiles secure PDF reports from uploaded images.
-          </p>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+              whileHover={{ y: -6 }}
+              className="group relative rounded-3xl overflow-hidden transition-all duration-300 bg-[var(--color-surface)] border border-[#3E7BFA]/20 hover:border-[#3E7BFA]/40"
+            >
+              {/* Hover glow border */}
+              <div
+                className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none border border-[#3E7BFA]/40"
+              />
 
-        {/*Third project */}
-        <div
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-center"
-          data-aos-delay="200"
-          className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
-        >
-          <div className="relative overflow-hidden rounded-xl">
-            <Image
-              src="/images/image3.png"
-              alt="Recommendation API"
-              width={800}
-              height={500}
-              className="rounded-xl transform hover:scale-110 transition-transform duration-500"
-            />
-          </div>
-          <h1 className="mt-6 text-2xl font-bold text-white">
-            SujhavMitra - Recommendation API
-          </h1>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {["Flask", "JWT", "MySQL", "Postman"].map((tech) => (
-              <span key={tech} className="px-3 py-1 bg-orange-500/10 text-orange-400 text-xs rounded-full border border-orange-500/20">
-                {tech}
-              </span>
-            ))}
-          </div>
-          <p className="mt-4 text-gray-400 text-sm leading-relaxed">
-            Backend API with JWT auth, password hashing, and modular REST endpoints for content retrieval.
-          </p>
-        </div>
+              {/* GitHub link icon top-right */}
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-[var(--color-surface)] border border-[#3E7BFA]/20 text-[var(--text-muted)] hover:text-[var(--text-accent)] hover:border-[#3E7BFA]/40 hover:bg-[#3E7BFA]/10 transition-all duration-300"
+              >
+                <BsArrowUpRight className="text-sm" />
+              </a>
 
-        {/*4th project */}
-        <div
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-center"
-          data-aos-delay="300"
-          className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
-        >
-          <div className="relative overflow-hidden rounded-xl">
-            <Image
-              src="/images/image2.png"
-              alt="Personal Portfolio"
-              width={800}
-              height={800}
-              className="rounded-xl transform hover:scale-110 transition-transform duration-500"
-            />
-          </div>
-          <h1 className="mt-6 text-2xl font-bold text-white">
-            Modern Developer Portfolio
-          </h1>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {["Next.js 16", "React 19", "Tailwind 4", "AOS"].map((tech) => (
-              <span key={tech} className="px-3 py-1 bg-green-500/10 text-green-400 text-xs rounded-full border border-green-500/20">
-                {tech}
-              </span>
-            ))}
-          </div>
-          <p className="mt-4 text-gray-400 text-sm leading-relaxed">
-            This very portfolio! Showcasing advanced animations, particle effects, and high-fidelity UI/UX.
-          </p>
+              {/* Illustration panel */}
+              <div className="p-4 pb-0">
+                <ProjectIllustration type={project.illustration} size="small" />
+              </div>
+
+              {/* Card content */}
+              <div className="p-5 pt-4">
+                <h3 className="text-[var(--text-heading)] text-lg font-semibold mb-1.5">
+                  {project.title}
+                </h3>
+                <p className="text-[var(--text-body)] text-sm leading-relaxed mb-4">
+                  {project.shortDesc}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-0.5 text-xs rounded-full border bg-[#3E7BFA]/10 text-[var(--text-accent)] border-[#3E7BFA]/20"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Links */}
+                <div className="flex items-center gap-3 pt-4 border-t border-[#3E7BFA]/12">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--text-muted)] hover:text-[var(--text-heading)] transition-colors duration-200 group/link"
+                  >
+                    <BsGithub className="text-sm" />
+                    <span>GitHub</span>
+                    <BsArrowUpRight className="text-xs opacity-0 group-hover/link:opacity-100 -translate-x-1 group-hover/link:translate-x-0 transition-all duration-200" />
+                  </a>
+                  {project.live && (
+                    <>
+                      <span className="text-[var(--color-text-tertiary)]/30">·</span>
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--text-accent)] hover:text-[var(--text-heading)] transition-colors duration-200 group/live"
+                      >
+                        <BsBoxArrowUpRight className="text-sm" />
+                        <span>Live Demo</span>
+                        <BsArrowUpRight className="text-xs opacity-0 group-hover/live:opacity-100 -translate-x-1 group-hover/live:translate-x-0 transition-all duration-200" />
+                      </a>
+                    </>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </div>
-    </div>
+    </section>
   );
 }

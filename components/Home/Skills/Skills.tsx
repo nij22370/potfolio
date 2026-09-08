@@ -1,93 +1,85 @@
 "use client";
 import React from "react";
-import {
-  SiNextdotjs,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-  SiRedux,
-  SiMongodb,
-  SiPostman,
-  SiGithub,
-} from "react-icons/si";
-import Tilt from "react-parallax-tilt";
+import { motion } from "framer-motion";
 
-const skills = [
+const skillCategories = [
   {
-    name: "React.js",
-    icon: <SiReact className="text-cyan-400" />,
-    percentage: 84,
+    category: "Core",
+    skills: ["Next.js", "React", "TypeScript", "JavaScript"]
   },
   {
-    name: "Next.js",
-    icon: <SiNextdotjs className="text-white" />,
-    percentage: 82,
+    category: "State & Data",
+    skills: ["Redux Toolkit", "TanStack Query", "Zustand"]
   },
   {
-    name: "TypeScript",
-    icon: <SiTypescript className="text-blue-500" />,
-    percentage: 80,
+    category: "UI",
+    skills: ["Tailwind CSS", "Shadcn UI", "Framer Motion"]
   },
   {
-    name: "Redux",
-    icon: <SiRedux className="text-purple-500" />,
-    percentage: 78,
+    category: "Forms & Validation",
+    skills: ["React Hook Form", "Zod"]
   },
   {
-    name: "Tailwind CSS",
-    icon: <SiTailwindcss className="text-cyan-300" />,
-    percentage: 84,
+    category: "Backend",
+    skills: ["Flask", "Python"]
   },
   {
-    name: "MongoDB",
-    icon: <SiMongodb className="text-green-500" />,
-    percentage: 75,
+    category: "Databases",
+    skills: ["MongoDB", "MySQL"]
   },
   {
-    name: "Postman",
-    icon: <SiPostman className="text-orange-500" />,
-    percentage: 80,
-  },
-  {
-    name: "GitHub",
-    icon: <SiGithub className="text-white" />,
-    percentage: 84,
-  },
+    category: "Tooling",
+    skills: ["Git", "GitHub Actions", "Vercel CI/CD", "Postman"]
+  }
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 bg-[#0a0a1f]">
-      <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-center text-5xl md:text-6xl font-bold text-white mb-16">
-          my <span className="text-cyan-400">Skills</span>
-        </h1>
+    <section id="skills" className="py-24 bg-[var(--color-canvas)]">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mb-[var(--spacing-7xl)]"
+        >
+          <p className="text-[var(--font-label-small)] font-medium text-[var(--text-accent)] tracking-widest uppercase mb-[var(--spacing-md)]">
+            Tech Stack
+          </p>
+          <h2 className="text-[var(--font-heading-lg)] text-[var(--text-heading)]">
+            Skills & Technologies
+          </h2>
+        </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          {skills.map((skill, i) => (
-            <Tilt
-              key={skill.name}
-              tiltMaxAngleX={12}
-              tiltMaxAngleY={12}
-              scale={1.1}
-              transitionSpeed={600}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[var(--spacing-md)]">
+          {skillCategories.map((category, categoryIndex) => (
+            <motion.div
+              key={category.category}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: categoryIndex * 0.1, ease: "easeOut" }}
+              className="group relative rounded-[var(--radius-3xl)] p-[var(--spacing-xl)] hover:-translate-y-0.5 transition-all duration-300 bg-[var(--color-surface)] border border-[#3E7BFA]/20"
             >
-              <div
-                data-aos="flip-up"
-                data-aos-delay={i * 100}
-                className="group bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center gap-4 h-56 shadow-xl hover:shadow-cyan-500/30 hover:border-cyan-400 transition-all duration-500"
-              >
-                <div className="text-6xl group-hover:scale-110 transition-transform duration-300">
-                  {skill.icon}
-                </div>
-                <div className="text-center">
-                  <p className="text-3xl font-bold text-white">
-                    {skill.percentage}%
-                  </p>
-                  <p className="text-gray-300 text-sm mt-2">{skill.name}</p>
-                </div>
+              <h3 className={`text-[var(--font-label-medium)] font-medium mb-[var(--spacing-md)] ${category.category === "Core" ? "text-[var(--text-accent)]" : "text-[var(--text-heading)]"}`}>
+                {category.category}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill, skillIndex) => (
+                  <motion.span
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.3, delay: skillIndex * 0.03, ease: "easeOut" }}
+                    className="px-[var(--spacing-sm)] py-[var(--spacing-xs)] bg-[#3E7BFA]/10 text-[var(--text-accent)] text-[var(--font-label-small)] rounded-[var(--radius-pill)] border border-[#3E7BFA]/20 hover:bg-[#3E7BFA]/20 transition-all duration-300"
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
               </div>
-            </Tilt>
+            </motion.div>
           ))}
         </div>
       </div>

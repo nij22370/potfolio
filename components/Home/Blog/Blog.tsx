@@ -3,10 +3,10 @@ import BlogCard from "./BlogCard";
 
 const Blog = () => {
   return (
-    <div id="blog" className="py-20">
+    <div id="blog" className="py-20 bg-[var(--color-canvas)]">
       <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-16">
-          My Latest <span className="text-cyan-400">Blogs</span>
+        <h1 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-heading)] mb-16">
+          My Latest <span className="text-[var(--text-accent)]">Blogs</span>
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
         <div
