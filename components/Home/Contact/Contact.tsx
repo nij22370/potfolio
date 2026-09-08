@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 import { BiEnvelope, BiMap } from "react-icons/bi";
 import {
   FaGithub,
@@ -12,28 +11,18 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-[var(--color-canvas)]">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-[var(--spacing-7xl)]"
-        >
+         <div className="mb-[var(--spacing-7xl)]">
           <p className="text-[var(--font-label-small)] font-medium text-[var(--text-accent)] tracking-widest uppercase mb-[var(--spacing-md)]">
             Contact
           </p>
           <h2 className="text-[var(--font-heading-lg)] text-[var(--text-heading)]">
             Get in Touch
           </h2>
-        </motion.div>
+        </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--spacing-5xl)] items-start">
           {/* Left Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+          <div
             className="space-y-[var(--spacing-2xl)]"
           >
             <div>
@@ -81,18 +70,14 @@ export default function Contact() {
                 <FaLinkedinIn className="text-[var(--text-heading)] text-xl" />
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Side - Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+          <div
             className="bg-[var(--color-surface)] border border-[#3E7BFA]/20 p-[var(--spacing-2xl)] rounded-[var(--radius-3xl)]"
           >
             <ContactForm />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
