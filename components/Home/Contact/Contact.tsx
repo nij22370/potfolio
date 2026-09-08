@@ -25,13 +25,13 @@ export default function Contact() {
           <div
             className="space-y-[var(--spacing-2xl)]"
           >
-            <div>
-              <h3 className="text-[var(--text-heading)] text-[var(--font-heading-md)] font-medium mb-[var(--spacing-md)]">
-                Let's work together
-              </h3>
-              <p className="text-[var(--text-body)] text-[var(--font-body-regular)] leading-relaxed">
-                I'm currently available for freelance work and full-time opportunities. If you have a project in mind or just want to chat, feel free to reach out.
-              </p>
+             <div>
+               <h3 className="text-[var(--text-heading)] text-[var(--font-heading-md)] font-medium mb-[var(--spacing-md)]">
+                 Let&apos;s work together
+               </h3>
+               <p className="text-[var(--text-body)] text-[var(--font-body-regular)] leading-relaxed">
+                 I&apos;m currently available for freelance work and full-time opportunities. If you have a project in mind or just want to chat, feel free to reach out.
+               </p>
             </div>
 
             <div className="space-y-[var(--spacing-md)]">

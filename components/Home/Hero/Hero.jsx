@@ -45,7 +45,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
           className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[84px] font-semibold leading-[84px] text-center tracking-[-1.2px] mt-[var(--spacing-6xl)]"
         >
-          Hi, I'm{" "}
+          Hi, I&apos;m{" "}
           <span className="text-[var(--text-accent)]">Sandesh Dhakal</span>
         </motion.h1>
         

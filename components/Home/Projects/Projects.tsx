@@ -73,7 +73,7 @@ export default function Projects() {
             Personal Projects
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-heading)] leading-tight">
-            Things I've Built
+            Things I&apos;ve Built
           </h2>
           <p className="mt-3 text-[var(--text-body)] max-w-xl">
             Unlike the case studies above, these were built on my own time and are

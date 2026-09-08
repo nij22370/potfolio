@@ -54,7 +54,7 @@ const Nav = ({ openNav }: Props) => {
     return () => observer.disconnect();
   }, []);
 
-  const handleNavClick = (sectionId: string, url: string) => {
+  const handleNavClick = (sectionId: string) => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
@@ -88,10 +88,10 @@ const Nav = ({ openNav }: Props) => {
             <Link
               key={link.id}
               href={link.url}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(link.id, link.url);
-              }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.id);
+                  }}
               className={`relative text-[var(--font-body-base)] font-medium transition-all duration-300 ${
                 activeSection === link.id ? "text-[var(--text-accent)]" : "text-[var(--text-muted)]"
               } hover:text-[var(--text-heading)]`}

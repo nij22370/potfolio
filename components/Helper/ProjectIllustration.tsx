@@ -126,7 +126,7 @@ const BarcodeIllustration = ({ isLarge }: { isLarge: boolean }) => {
       {/* Barcode bars */}
       {bars.reduce<{ els: React.ReactNode[]; x: number }>((acc, barWidth, i) => {
         const bx = barX + acc.x * scale;
-        const bh = barH * (0.6 + Math.random() * 0.4);
+        const bh = barH * (0.6 + ((i * 7 + 3) % 10) / 10 * 0.4);
         acc.els.push(
           <motion.rect key={i}
             x={bx} y={barY + (barH - bh) / 2}
@@ -372,7 +372,6 @@ const PipelineIllustration = ({ isLarge }: { isLarge: boolean }) => {
 const DashboardIllustration = ({ isLarge }: { isLarge: boolean }) => {
   const w = isLarge ? 400 : 200;
   const h = isLarge ? 240 : 200;
-  const cx = w / 2;
   const cy = h / 2;
   const bars = [
     { label: "Tasks", width: 0.85, color: "#22D3EE" },
