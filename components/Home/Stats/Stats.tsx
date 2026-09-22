@@ -4,34 +4,35 @@ import { motion, useInView } from "framer-motion";
 
 // Real computable stats based on the data provided
 const statsData = [
-  { label: "Projects Shipped", value: 5 }, // 5 personal projects
-  { label: "Core Technologies", value: 16 }, // Count from skills: Next.js, React, TypeScript, JavaScript, Redux Toolkit, TanStack Query, Zustand, Tailwind CSS, Shadcn UI, Framer Motion, React Hook Form, Zod, Flask, Python, MongoDB, MySQL
-  { label: "Internships Completed", value: 2 }, // Nepware + TechYatra Labs
-  { label: "Years Building", value: 4 } // B.Sc. CSIT 2021-2025 + work in 2026 = ~4 years
+  { label: "Projects Shipped", value: 6 },
+  { label: "Core Technologies", value: 14 },
+  { label: "Internships Completed", value: 3 },
+  { label: "Years Building", value: 2 },
 ];
 
 const StatCounter = ({ value, label }: { value: number; label: string }) => {
   const [displayCount, setDisplayCount] = useState(0);
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const ref = React.useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px 0px" });
 
   useEffect(() => {
-    if (isInView) {
-      let start = 0;
-      const end = value;
-      const duration = 1500;
-      const incrementTime = duration / end;
+    if (!isInView) return;
 
-      const timer = setInterval(() => {
-        start += 1;
-        setDisplayCount(start);
-        if (start >= end) {
-          clearInterval(timer);
-        }
-      }, incrementTime);
+    let animationFrame: number;
+    const start = performance.now();
+    const duration = 1500;
 
-      return () => clearInterval(timer);
-    }
+    const updateCount = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      setDisplayCount(Math.round(progress * value));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(updateCount);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(updateCount);
+    return () => cancelAnimationFrame(animationFrame);
   }, [isInView, value]);
 
   return (

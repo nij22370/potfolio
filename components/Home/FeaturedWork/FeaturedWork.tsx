@@ -7,7 +7,7 @@ import ProjectIllustration from "@/components/Helper/ProjectIllustration";
 const featuredWork = [
   {
     id: 1,
-    index: "01/02",
+    index: "01/03",
     title: "Motorcycle Inventory Management System",
     company: "Nepware Pvt. Ltd. — Frontend Developer Intern",
     period: "Jan – Apr 2026",
@@ -20,7 +20,7 @@ const featuredWork = [
   },
   {
     id: 2,
-    index: "02/02",
+    index: "02/03",
     title: "PLMS/MentorAI Platform",
     company: "TechYatra Labs — Frontend Developer Trainee",
     period: "2025 – 2026",
@@ -30,6 +30,30 @@ const featuredWork = [
       "Contributed to PLMS/MentorAI (PLMS-Frontend) at TechYatra Labs. Built the TutorHub listing and profile UI, implemented a 3-step booking modal flow (slot selection → confirmation → success). Integrated Django REST APIs using TanStack Query with a clean 3-layer architecture. Built the Classroom module from scratch including CalendarStrip, ClassCard, ClassDetail, and LiveBadge components. Fixed a critical infinite API-call loop. Also built the TechYatra Labs marketing site using Next.js 14 and Framer Motion.",
     tags: ["Next.js 14", "TanStack Query", "Django REST", "Framer Motion"],
     illustration: "pipeline",
+  },
+  {
+    id: 3,
+    index: "03/03",
+    title: "FlyRank AI — Front-end AI Engineering Internship",
+    company: "FlyRank AI — Front-end AI Engineer · Internship",
+    period: "Jul 2026 – Sep 2026 · 3 months · Remote · Lalitpur, Nepal",
+    shortDesc:
+      "Completed two certification tracks at FlyRank AI. Built responsive, mobile-first UI components following storefront patterns (Shopify/Shopline-style). Completed structured AI Fluency training with hands-on use of Claude, ChatGPT, Gemini, and Perplexity. Applied AI-assisted workflows to frontend development, QA, and developer productivity.",
+    fullDesc:
+      "Completed two certification tracks at FlyRank AI. Built responsive, mobile-first UI components following storefront patterns (Shopify/Shopline-style). Completed structured AI Fluency training with hands-on use of Claude, ChatGPT, Gemini, and Perplexity. Applied AI-assisted workflows to frontend development, QA, and developer productivity.",
+    certifications: [
+      "FlyRank AI Internship — Front-end AI Engineering ✓",
+      "General AI Fluency — Internship ✓",
+    ],
+    tags: [
+      "Next.js",
+      "Tailwind CSS",
+      "Responsive Design",
+      "AI-Assisted Dev",
+      "Prompt Engineering",
+      "General AI Fluency",
+    ],
+    illustration: "ai-review",
   },
 ];
 
@@ -104,6 +128,19 @@ export default function FeaturedWork() {
                       </span>
                     ))}
                   </div>
+
+                  {work.certifications && (
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {work.certifications.map((certification) => (
+                        <span
+                          key={certification}
+                          className="px-[var(--spacing-sm)] py-[var(--spacing-xs)] bg-[#22D3EE]/10 text-[#22D3EE] text-[var(--font-label-small)] rounded-[var(--radius-pill)] border border-[#22D3EE]/20"
+                        >
+                          {certification}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
                   <button
                     onClick={() => toggleExpand(work.id)}

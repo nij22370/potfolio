@@ -368,6 +368,99 @@ const PipelineIllustration = ({ isLarge }: { isLarge: boolean }) => {
   );
 };
 
+const AIReviewIllustration = ({ isLarge }: { isLarge: boolean }) => {
+  const w = isLarge ? 400 : 200;
+  const h = isLarge ? 240 : 200;
+  const cy = h / 2;
+  const nodeXs = isLarge ? [60, 200, 340] : [30, 100, 170];
+  const r = isLarge ? 24 : 16;
+  const labels = ["Component", "AI Review", "Ship"];
+  const colors = ["#6D5DFB", "#22D3EE", "#3E7BFA"];
+
+  return (
+    <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+      <GlowFilter id="ai-review-glow" color="#6D5DFB" />
+      <GridBackground id="ai-review" />
+      <defs>
+        <marker id="ai-review-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#22D3EE" />
+        </marker>
+      </defs>
+
+      {nodeXs.slice(0, -1).map((x, i) => (
+        <motion.line
+          key={`ai-review-line-${i}`}
+          x1={x + r + 8}
+          x2={nodeXs[i + 1] - r - 8}
+          y1={cy}
+          y2={cy}
+          stroke="#22D3EE"
+          strokeWidth="1.5"
+          strokeDasharray="80"
+          markerEnd="url(#ai-review-arrow)"
+          initial={{ strokeDashoffset: 80 }}
+          animate={{ strokeDashoffset: 0 }}
+          transition={{ duration: 0.8, delay: i * 0.35, ease: "easeOut" }}
+        />
+      ))}
+
+      {labels.map((label, i) => (
+        <g key={`ai-review-node-${i}`}>
+          <motion.circle
+            cx={nodeXs[i]}
+            cy={cy}
+            r={r}
+            fill={i === 1 ? "rgba(34,211,238,0.2)" : "rgba(109,93,251,0.2)"}
+            stroke={colors[i]}
+            strokeWidth="1.5"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: i * 0.25, ease: "easeOut" }}
+            filter="url(#ai-review-glow)"
+          />
+          <motion.text
+            x={nodeXs[i]}
+            y={cy + (isLarge ? 4 : 3)}
+            textAnchor="middle"
+            fill="#fff"
+            fontSize={isLarge ? 9 : 7}
+            fontWeight="600"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.45 + i * 0.25, ease: "easeOut" }}
+          >
+            {label}
+          </motion.text>
+          <motion.text
+            x={nodeXs[i]}
+            y={cy + r + (isLarge ? 13 : 10)}
+            textAnchor="middle"
+            fill="rgba(255,255,255,0.45)"
+            fontSize={isLarge ? 7 : 5.5}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.65 + i * 0.25, ease: "easeOut" }}
+          >
+            {i === 0 ? "Build" : i === 1 ? "Review" : "Deploy"}
+          </motion.text>
+        </g>
+      ))}
+
+      <motion.circle
+        r="3.5"
+        fill="#fff"
+        filter="url(#ai-review-glow)"
+        animate={{
+          cx: nodeXs,
+          cy: nodeXs.map(() => cy),
+          opacity: [0, 1, 1, 1, 0],
+        }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: "linear", repeatDelay: 1 }}
+      />
+    </svg>
+  );
+};
+
 /* ─── Dashboard Bars illustration ────────────────────────────── */
 const DashboardIllustration = ({ isLarge }: { isLarge: boolean }) => {
   const w = isLarge ? 400 : 200;
@@ -692,6 +785,8 @@ const ProjectIllustration: React.FC<ProjectIllustrationProps> = ({ type, size = 
       case "connected":
       case "taskflow-nodes":
         return <PipelineIllustration isLarge={isLarge} />;
+      case "ai-review":
+        return <AIReviewIllustration isLarge={isLarge} />;
       case "dashboard":
       case "checklist":
       case "calendar":

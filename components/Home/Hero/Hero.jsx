@@ -55,7 +55,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           className="mt-[var(--spacing-xl)] text-[var(--font-body-regular)] text-[var(--color-text-secondary)] text-center font-normal max-w-2xl leading-relaxed"
         >
-          Frontend Developer based in Lalitpur, Nepal. I build high-performance web applications with Next.js, React, and TypeScript.
+          Frontend Developer based in Lalitpur, Nepal. I build responsive, interactive, and engaging digital experiences with Next.js, React, and TypeScript.
         </motion.h2>
 
         <motion.div

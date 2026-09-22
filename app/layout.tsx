@@ -17,11 +17,15 @@ const font = Outfit({
 export const metadata: Metadata = {
   title: "Sandesh Dhakal — Frontend Developer",
   description:
-    "Sandesh Dhakal — Frontend Developer based in Lalitpur, Nepal. Building high-performance web applications with Next.js, React, and TypeScript.",
+    "Frontend Developer based in Lalitpur, Nepal. Building responsive, interactive web experiences with Next.js, React, TypeScript, and Tailwind CSS.",
   openGraph: {
     title: "Sandesh Dhakal — Frontend Developer",
     description:
-      "Frontend Developer based in Lalitpur, Nepal. Building with Next.js, React, and TypeScript.",
+      "Frontend Developer based in Lalitpur, Nepal. Building responsive, interactive web experiences with Next.js, React, TypeScript, and Tailwind CSS.",
+  },
+  twitter: {
+    description:
+      "Frontend Developer based in Lalitpur, Nepal. Building responsive, interactive web experiences with Next.js, React, TypeScript, and Tailwind CSS.",
   },
 };
 

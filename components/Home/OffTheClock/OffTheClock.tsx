@@ -1,9 +1,14 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { BiFootball, BiTrophy, BiMusic, BiMap } from "react-icons/bi";
+import { BiFootball, BiTrophy, BiMusic, BiMap, BiBrain } from "react-icons/bi";
 
 const interests = [
+  {
+    icon: BiBrain,
+    title: "AI-Assisted Development",
+    description: "Passionate about integrating AI tools into frontend workflows — actively using Claude, ChatGPT, Gemini, and Perplexity for development, QA, and productivity."
+  },
   {
     icon: BiFootball,
     title: "Football",

@@ -9,11 +9,11 @@ const skillCategories = [
   },
   {
     category: "State & Data",
-    skills: ["Redux Toolkit", "TanStack Query", "Zustand"]
+    skills: ["Redux Toolkit", "TanStack Query", "Zustand", "Supabase"]
   },
   {
     category: "UI",
-    skills: ["Tailwind CSS", "Shadcn UI", "Framer Motion"]
+    skills: ["Tailwind CSS", "Shadcn UI", "Framer Motion", "jsPDF"]
   },
   {
     category: "Forms & Validation",
@@ -21,7 +21,7 @@ const skillCategories = [
   },
   {
     category: "Backend",
-    skills: ["Flask", "Python"]
+    skills: ["Flask", "Python", "Node.js"]
   },
   {
     category: "Databases",
@@ -29,7 +29,7 @@ const skillCategories = [
   },
   {
     category: "Tooling",
-    skills: ["Git", "GitHub Actions", "Vercel CI/CD", "Postman"]
+    skills: ["Git", "GitHub Actions", "Vercel CI/CD", "Postman", "Pusher", "Leaflet", "Auth.js"]
   }
 ];
 
